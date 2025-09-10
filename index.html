@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Shah - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            position: relative;
+            border-radius: 0;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1e293b;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .profile-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+            position: relative;
+        }
+        
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            pointer-events: none;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #64748b;
+            line-height: 1.8;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            color: #1e293b;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .contact-links {
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-links a {
+            color: #475569;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+        }
+        
+        .contact-links a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+            background: white;
+        }
+        
+        /* Content Sections */
+        .content {
+            padding: 60px;
+            background: white;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(15, 23, 42, 0.12);
+            border-color: #cbd5e1;
+        }
+        
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-size: 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+        }
+        
+        .project-image i {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-content {
+            padding: 28px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+        
+        .project-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-link:hover {
+            color: #2563eb;
+            transform: translateX(4px);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 36px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            border-left: 5px solid #3b82f6;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+        }
+        
+        .skill-category h3 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .skill-category h3 i {
+            color: #3b82f6;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 10px 0;
+            color: #475569;
+            font-weight: 500;
+            position: relative;
+            padding-left: 32px;
+            font-size: 1rem;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+        
+        .video-item {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+        }
+        
+        .video-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .video-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-item:hover .video-placeholder::before {
+            transform: scale(1);
+        }
+        
+        .video-placeholder i {
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .video-item:hover .video-placeholder i {
+            transform: scale(1.1);
+        }
+        
+        .video-content {
+            padding: 24px;
+        }
+        
+        .video-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .video-description {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+            margin-top: 40px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .about-content p {
+            margin-bottom: 24px;
+        }
+        
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+        }
+        
+        /* Category Headers */
+        .category-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .category-header h3 {
+            color: #1e293b;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content {
+                padding: 40px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header {
+                padding: 60px 30px;
+            }
+            
+            .content {
+                padding: 40px 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            
+            .stat {
+                min-width: 200px;
+            }
+            
+            .projects-grid,
+            .skills-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-btn {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 20px auto;
+                display: flex;
+                width: fit-content;
+            }
+            
+            .contact-links a {
+                margin: 10px;
+                display: inline-flex;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+                font-size: 44px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-container">
+                
+                <h1>Prince Shah</h1>
+                <p class="subtitle">Frontend & Backend Developer</p>
+                <p class="description">
+                    I design and develop clean, conversion-focused websites & e-commerce platforms that deliver exceptional user experiences. With 2+ years of hands-on experience in frontend and backend development, I specialize in building fast, responsive, and scalable web solutions that drive measurable business results.
+                </p>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">12+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+            </div>
+            
+            <div class="contact-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:prince@email.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </header>
+
+        <main class="content">
+            <!-- E-commerce Projects -->
+            <section class="section">
+                <h2 class="section-title">E-commerce Projects</h2>
+                <div class="category-header">
+                    <h3><i class="fas fa-shopping-cart"></i> E-commerce & Online Stores</h3>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">The Foods Life</h3>
+                            <a href="http://thefoodslife.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Unicrop Biochem</h3>
+                            <a href="https://unicropbiochem.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Prime Tech Logic</h3>
+                            <a href="http://primetechlogic.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Business & Corporate Websites -->
+            <section class="section">
+                <h2 class="section-title">Business & Corporate Websites</h2>
+                <div class="category-header">
+                    <h3><i class="fas fa-building"></i> Corporate & Business Solutions</h3>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">WorldBridge Partners</h3>
+                            <a href="https://www.worldbridgepartners.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Legacy Digitronics</h3>
+                            <a href="http://legacydigitronics.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">International Leadership Group</h3>
+                            <a href="https://intlg.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">BRvshcul7ur3</h3>
+                            <a href="https://brvshcul7ur3.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Jody Harker Search</h3>
+                            <a href="https://jodyharkersearch.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AutoTech Recruiting</h3>
+                            <a href="https://www.autotechres.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">WBP Boise</h3>
+                            <a href="https://wbpboise.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">WBP Chicago NW</h3>
+                            <a href="https://wbpchicagonw.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">HCIT Talent Acquisition</h3>
+                            <a href="https://hcittalentacquisition.com/" class="project-link" target="_blank">
+                                View Project <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Responsive Web Design</li>
+                            <li>Cross-browser Compatibility</li>
+                            <li>Performance Optimization</li>
+                            <li>UI/UX Implementation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Backend Development</h3>
+                        <ul class="skill-list">
+                            <li>PHP Development</li>
+                            <li>WordPress Development</li>
+                            <li>Database Management</li>
+                            <li>API Integration</li>
+                            <li>Server Configuration</li>
+                            <li>Security Implementation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-search"></i> SEO Expertise</h3>
+                        <ul class="skill-list">
+                            <li>On-page Optimization</li>
+                            <li>Technical SEO</li>
+                            <li>Off-page SEO</li>
+                            <li>Keyword Research & Analysis</li>
+                            <li>SEO Audits & Reporting</li>
+                            <li>Local SEO</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-bullhorn"></i> Digital Marketing</h3>
+                        <ul class="skill-list">
+                            <li>Google Ads Campaign Management</li>
+                            <li>Keyword Planning & Strategy</li>
+                            <li>Audience Targeting</li>
+                            <li>Conversion Tracking</li>
+                            <li>ROI Optimization</li>
+                            <li>Analytics & Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Work Section -->
+            <section class="section">
+                <h2 class="section-title">Video & Creative Work</h2>
+                <div class="category-header">
+                    <h3><i class="fas fa-video"></i> Commercial Videos & Product Teasers</h3>
+                </div>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <a href="https://drive.google.com/file/d/1pdlIOylNbKei8iINNNkcW3pxDzf-lvYM/view?usp=sharing" class="video-link" target="_blank">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-content">
+                                <h3 class="video-title">Commercial Video 1</h3>
+                                <p class="video-description">Professional commercial video production</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="video-item">
+                        <a href="https://drive.google.com/file/d/1KeYQS118G1Q7o2LwVGv4QUHyrzN4kUnR/view?usp=sharing" class="video-link" target="_blank">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-content">
+                                <h3 class="video-title">Commercial Video 2</h3>
+                                <p class="video-description">Corporate brand promotional content</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="video-item">
+                        <a href="https://drive.google.com/file/d/1xgIvb19eIQObHovknJ-irh8wKp8TIMyb/view?usp=sharing" class="video-link" target="_blank">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-content">
+                                <h3 class="video-title">Product Teaser 1</h3>
+                                <p class="video-description">Engaging product showcase teaser</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="video-item">
+                        <a href="https://drive.google.com/file/d/1JKKY6qrEGfuUCYAjpw5qnEloTXTp5A-j/view?usp=sharing" class="video-link" target="_blank">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-content">
+                                <h3 class="video-title">Product Teaser 2</h3>
+                                <p class="video-description">Creative product marketing video</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>As a passionate frontend and backend developer, I specialize in creating elegant, high-performance, and conversion-optimized web experiences that drive real business results. I work closely with businesses and industry experts to transform innovative ideas into fast, secure, and scalable digital solutions.</p>
+                    
+                    <p>My technical expertise spans modern frontend technologies including HTML5, CSS3, and JavaScript, combined with robust backend development using PHP and WordPress. I focus on delivering user-friendly, responsive websites that not only look exceptional but also perform optimally across all devices and platforms.</p>
+                    
+                    <p>Beyond development, I bring comprehensive digital marketing expertise to every project. My skills in Search Engine Optimization (SEO) and Google Ads management help businesses establish a strong online presence and achieve measurable growth. I believe in the perfect blend of technical excellence and strategic marketing to deliver solutions that truly make an impact.</p>
+                    
+                    <p>Whether you're looking to build a new website, optimize your existing platform, or launch a comprehensive digital marketing campaign, I'm committed to delivering results that exceed expectations and contribute to your business success.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // Hide the download button temporarily
+            const downloadBtn = document.querySelector('.download-btn');
+            downloadBtn.style.display = 'none';
+            
+            // Use the browser's print functionality to save as PDF
+            window.print();
+            
+            // Show the button again after a short delay
+            setTimeout(() => {
+                downloadBtn.style.display = 'flex';
+            }, 1000);
+        }
+
+        // Print styles for PDF generation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @media print {
+                body {
+                    background: white !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                .download-btn {
+                    display: none !important;
+                }
+                .container {
+                    box-shadow: none !important;
+                    margin: 0 !important;
+                    max-width: none !important;
+                }
+                .section {
+                    page-break-inside: avoid;
+                    margin-bottom: 40px;
+                }
+                .project-card, .video-item, .skill-category {
+                    page-break-inside: avoid;
+                    margin-bottom: 20px;
+                }
+                .header {
+                    page-break-after: avoid;
+                }
+                a {
+                    color: #3b82f6 !important;
+                    text-decoration: underline !important;
+                }
+                .video-link {
+                    color: inherit !important;
+                    text-decoration: none !important;
+                }
+                .video-link .video-title {
+                    color: #1e293b !important;
+                }
+                .header::before,
+                .project-image::before,
+                .video-placeholder::before {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for subtle animations
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            // Observe project cards and skill categories
+            document.querySelectorAll('.project-card, .skill-category, .video-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
